@@ -19,15 +19,7 @@ Before switching to "Duplicate" mode the position of opened application windows 
 ## Requirements ##
 Wintermelon is a C# project relying on .NET Core 3.1 and it was originally developed on & for Windows 10 using Visual Studio 2019.
 
-To build Wintermelon executable you'll need:
-
-1) [.NET Core SDK 3.1](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
-
-2) [Visual Studio IDE](https://visualstudio.microsoft.com/vs/older-downloads/)
-
-3) Windows PC
-
-To test and install Wintermelon you'll need:
+To install Wintermelon you'll need:
 
 1) Windows 10 or Windows 11 PC
 
@@ -53,43 +45,6 @@ To enable lockscreen for primary display in Windows 10 & 11:
 
 5) When doing a sign-in the lockscreen background typically becomes blurred. Follow [these instructions](https://www.tenforums.com/tutorials/124993-enable-disable-acrylic-blur-effect-sign-screen-windows-10-a.html) to turn off this acrylic blur effect.
 
-
-## Building the executable ##
-
-1) Open the solution file *Wintermelon.sln* in Visual Studio. The C# source code resides in *Program.cs*.
-
-2) Build the solution by choosing **Build --> Build Solution (Ctrl+Shift+B)** from the menu bar.
-
-3) If there are no build errors then select **Build --> Publish Wintermelon** and pass the following publish information:
-
-    **Target location**=bin\Release\netcoreapp3.1\publish\
-
-    **Configuration**=Release
-
-    **Delete existing files**=false
-
-    **Target Framework**=netcoreapp3.1
-
-    **Target Runtime**=win-x64
-
-    Expand "**Show all**" and set the options under it to following values:
-
-    **Configuration**=Release | Any CPU
-
-    **Target framework**=netcoreapp3.1
-
-    **Deployment mode**=Framework-dependent
-
-    **Target runtime**=win-x64
-
-    **Target location**=bin\Release\netcoreapp3.1\publish\
-
-
-    Expand "**File publish options**", set **Produce single file** as checked and leave **Enable ReadyToRun compilation** unchecked.
-
-4) Press Publish button which will generate the executable **Wintermelon.exe** at the path *bin\Release\netcoreapp3.1\publish\Wintermelon.exe* relative to the C# solution folder.
-
-This executable handles the switching of projection mode between Duplicate and Extend modes during lock/unlock events and does recording, retrieval of window positions from a text file saved at *C:\Users\Your_Username\AppData\Local\Wintermelon\winpos.txt*.
 
 ## Using Wintermelon ##
 To monitor lock/unlock event and switch the projection mode two separate scheduled tasks will need to be registered with the Windows Task Scheduler. These tasks are:
